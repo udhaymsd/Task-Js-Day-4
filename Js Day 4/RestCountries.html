@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Fetch country data
+fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(data => {
+    // Display country flags
+    data.forEach(country => {
+      console.log(country.flags.png);
+    });
+  })
+  .catch(error => console.log(error));
+
+  // Fetch country data
+fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(data => {
+    // Print country details
+    data.forEach(country => {
+      console.log('Name: ' + country.name.common);
+      console.log('Region: ' + country.region);
+      console.log('Subregion: ' + country.subregion);
+      console.log('Population: ' + country.population);
+      console.log('--------------------');
+    });
+  })
+  .catch(error => console.log(error));
+
+
+    </script>
+    
+</body>
+</html>
